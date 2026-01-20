@@ -17,7 +17,7 @@ async function loginAction(formData: FormData) {
   if (!expected) redirect("/contact");
 
   if (password === expected) {
-    const jar = cookies();
+    const jar = await cookies();
     jar.set("mis_portal", "1", {
       httpOnly: true,
       secure: true,
